@@ -1,3 +1,22 @@
+Skip to content
+jigsaw-4277821
+/
+Psych-Engine-0.4.2-Android-Port
+Public template
+Code
+Issues
+Pull requests
+9
+Actions
+Projects
+Wiki
+Security
+Insights
+Psych-Engine-0.4.2-Android-Port/source/PlayState.hx
+@jigsaw-4277821
+jigsaw-4277821 Updates
+ 1 contributor
+4074 lines (3488 sloc)  113 KB
 package;
 
 #if desktop
@@ -881,6 +900,14 @@ class PlayState extends MusicBeatState
 		healthBarBG.yAdd = -4;
 		add(healthBarBG);
 		if(ClientPrefs.downScroll) healthBarBG.y = 0.11 * FlxG.height;
+
+var creditTxt:FlxText = new FlxText(4,healthBarBG.y + 20,0,("events by (Matheus) "), 24);
+        creditTxt.scrollFactor.set();
+        creditTxt.setFormat("VCR OSD Mono", 24, FlxColor.BLACK, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+        creditTxt.borderColor = FlxColor.BLACK;
+        creditTxt.borderSize = 3;
+        creditTxt.borderStyle = FlxTextBorderStyle.OUTLINE;
+        add(creditTxt);
 
 		healthBar = new FlxBar(healthBarBG.x + 4, healthBarBG.y + 4, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 8), Std.int(healthBarBG.height - 8), this,
 			'health', 0, 2);
@@ -3438,7 +3465,6 @@ class PlayState extends MusicBeatState
 			// FlxG.log.add('played imss note');
 
 			/*boyfriend.stunned = true;
-
 			// get stunned for 1/60 of a second, makes you able to
 			new FlxTimer().start(1 / 60, function(tmr:FlxTimer)
 			{
@@ -4072,3 +4098,16 @@ class PlayState extends MusicBeatState
 	var curLight:Int = 0;
 	var curLightEvent:Int = 0;
 }
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Loading complete
